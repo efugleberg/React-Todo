@@ -9,6 +9,7 @@ class TodoForm extends React.Component {
     }
 
     addItem = element => {
+        element.preventDefault();
         this.setState({
             inputItem: ""
         });
