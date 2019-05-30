@@ -1,0 +1,11 @@
+.todoListItem {
+    text-decoration: none;
+}
+
+.todoListItem.completed {
+    text-decoration: line-through;
+}
+
+.clear-item {
+    display: none;
+}
