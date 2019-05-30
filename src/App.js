@@ -59,13 +59,23 @@ addToList = (element, item) => {
       task: item,
       id: Date.now(),
       completed: false
+    };
+    this.setState(prevState => {
+      return {
+      ListArray: [...prevState.ListArray, NewChore]
+    }
+    });
 };
-this.setState(prevState => {
-  return {
-  ListArray: [...prevState.ListArray, NewChore]
+
+clearFromList = event => {
+  console.log('run');
+  event.preventDefault();
+  this.setState(prevState => {
+    return {
+      ListArray: prevState.ListArray.filter(todo => !todo.completed)
+    }
+})
 }
-});
-};
 
 
   render() {
@@ -74,10 +84,12 @@ this.setState(prevState => {
         <h2>Welcome to your Todo App!</h2>
         <TodoList
         ListArray={this.state.ListArray} 
-        toggleItem={this.toggleItem} />
+        toggleItem={this.toggleItem}
+         />
 
         <TodoForm 
-        addToList={this.addToList}/>
+        addToList={this.addToList}
+        clearFromList={this.clearFromList}/>
       </div>
     );
   }

@@ -22,6 +22,14 @@ class TodoForm extends React.Component {
         });
     }
 
+    // clearItem = element => {
+    //     element.preventDefault();
+    //     this.setState({
+    //         inputItem:''
+    //     })
+    //     this.props.ListArray(element, this.state.inputItem);
+    // }
+
 
     render() {
         return (
@@ -35,7 +43,7 @@ class TodoForm extends React.Component {
                 name="inputItem" 
                 />
                 <button onClick={this.addItem}>Add Todo</button>
-                <button>Clear Completed</button>
+                <button onClick={this.props.clearFromList} className=''>Clear Completed</button>
             </form>
 
             </div>
